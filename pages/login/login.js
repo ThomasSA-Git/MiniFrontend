@@ -28,11 +28,13 @@ export async function initLogin() {
                     .then((res) => res.json())
                     .then((data) => {
                         if (data.jwt) {
-                            setToken(data.jwt);
-                            window.router.navigate("/");
+                            setToken(data.jwt);                            
                             e.target.querySelector("input[type='text']").value = "";
                             e.target.querySelector("input[type='password']").value = "";
-                            refreshCredits();
+                            refreshCredits()
+                                .then(() => {
+                                    window.router.navigate("/");
+                                });
                         }
                         else {
                             alert("Invalid username or password!");

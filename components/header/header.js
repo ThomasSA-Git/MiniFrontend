@@ -10,15 +10,15 @@ function createLink(href, text) {
     return link;
 }
 
-function refreshCreditsView() {    
+function refreshCreditsView() {        
     const wrapper = document.getElementById("credits");    
     wrapper.innerHTML = "";    
 
     if (!isAuthenticated()) {
         return;
     }
-        
-    const credits = getCredits();
+            
+    const credits = getCredits();    
     const creditsView = document.createElement("span");
     creditsView.innerHTML = `<i class="fa-solid fa-coins"></i> ${credits}`;
     wrapper.className = credits > 0 ? "success" : "danger";

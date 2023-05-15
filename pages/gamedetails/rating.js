@@ -203,6 +203,7 @@ function removeCheckedClass() {
  * @private
  */
 function colorStarsBasedOnRating(rating) {
+    console.log(rating);
     const stars = document.querySelectorAll(`.${starObjectClass}`);
     // Color stars based on rating
     for (let i = 0; i < rating; i++) {
